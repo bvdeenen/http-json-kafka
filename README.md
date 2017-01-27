@@ -105,10 +105,18 @@ input is not json
 
 # Docker
 
+This project is built, and the resulting jar exists on vandeenensupport.com
 
+There's a public docker image that you can pull with:
 
-	sudo docker build -t http-json-kafka:1 .
+    docker pull bvdeenen/http-json-kafka
+    
+Run it with  one parameter that points to your kafka broker list
+
 
 	sudo docker run -P -d http-json-kafka:1 <broker-list>
 
+Build it yourself:
+
+	sudo docker build -t http-json-kafka:1 .
 
