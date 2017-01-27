@@ -101,6 +101,7 @@ curl -v -H 'Content-Type: application/json' \
 
 < HTTP/1.1 400 Bad Request
 input is not json
+```
 
 # Docker
 
