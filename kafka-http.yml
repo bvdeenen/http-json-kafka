@@ -1,0 +1,14 @@
+producer:
+  "bootstrap.servers": "127.0.0.1:9092"
+  "key.serializer": "org.apache.kafka.common.serialization.ByteArraySerializer"
+  "value.serializer": "org.apache.kafka.common.serialization.ByteArraySerializer"
+
+
+server:
+    adminConnectors:
+        - type: http
+          port: 10010
+
+    applicationConnectors:
+        - type: http
+          port: 8123
