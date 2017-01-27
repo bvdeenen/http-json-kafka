@@ -5,7 +5,7 @@ data must have a query parameter in the url that describes which field in the js
 partitioning.
 
 This project creates an Apache Kafka HTTP endpoint for consuming json messages and putting them into a kafka queue
-It is built on [the Dropwizard framework].
+It is built on [the Dropwizard framework](http://dropwizard.github.io/dropwizard/).
 
 Bart van Deenen
 
@@ -52,8 +52,9 @@ Example `kafka-http.yml`
     $KAFKA/bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic <topic>
 
 ## Partitioning
-The Kafka partition that is being used for the data, is via the [default Kafka partition][kd] function on the field
-defined with the query parameter `keyfield`.
+The Kafka partition that is being used for the data, is via the 
+[default Kafka partition](http://blog.rocana.com/kafkas-defaultpartitioner-and-byte-arrays) 
+function on the field defined with the query parameter `keyfield`.
 
 ## Send a POST http request
 
@@ -101,8 +102,12 @@ curl -v -H 'Content-Type: application/json' \
 < HTTP/1.1 400 Bad Request
 input is not json
 
+# Docker
 
-[the Dropwizard framework]: http://dropwizard.github.io/dropwizard/
-[dw server]: http://dropwizard.github.io/dropwizard/getting-started.html#running-your-application
-[the Dropwizard configuration reference]: http://dropwizard.github.io/dropwizard/manual/configuration.html
-[kd]: http://blog.rocana.com/kafkas-defaultpartitioner-and-byte-arrays
+
+
+	sudo docker build -t http-json-kafka:1 .
+
+	sudo docker run -P -d http-json-kafka:1 <broker-list>
+
+
